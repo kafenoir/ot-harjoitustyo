@@ -15,3 +15,9 @@ Hei! Olen Antti, ja tämä on *Helsingin yliopiston* kurssiin **Ohjelmistoteknii
 [komentorivi.txt](https://github.com/kafenoir/ot-harjoitustyo/blob/master/laskarit/komentorivi.txt)
 
 [gitlog.txt](https://github.com/kafenoir/ot-harjoitustyo/blob/master/laskarit/gitlog.txt)
+
+Some changes:
+
+* Hope and change.
+* Be the change you want to see in the world.
+* Got any change?
