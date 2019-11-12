@@ -24,4 +24,12 @@ Some changes:
 
 **WARNING! WARNING! WARNING! Unidentified object approaching! WARNING! WARNING! WARNING!**
 
+### Viikko 2
+
+[maarittelydokumentti.md](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
+
+[tyoaikakirjanpito.md](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+
+---
+
 
