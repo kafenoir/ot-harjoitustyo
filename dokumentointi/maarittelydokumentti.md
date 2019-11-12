@@ -1,11 +1,11 @@
-#Vaatimusmäärittely
-##Sovelluksen tarkoitus
+# Vaatimusmäärittely
+## Sovelluksen tarkoitus
 Sovelluksen avulla käyttäjillä on mahdollista harjoitella kiinan kielen alkeita. Käyttäjän on mahdollista luoda valmiista vaihtoehdoista harjoittelua varten sanalista, jonka harjoittelu tapahtuu ohjelmassa toteutetulla flashcard-pelillä. Pelissä on kaksi eri pelityyppiä: Ensimmäisessä käyttäjä syöttää merkin pinyin-asun ja toisessa englanninkielisen käännöksen. 
 
-##Käyttäjät
+## Käyttäjät
 Sovelluksella on ainoastaan yksi käyttäjärooli eli normaali käyttäjä.
 
-##Käyttöliittymäluonnos
+## Käyttöliittymäluonnos
 
 Sovellus koostuu kymmenestä eri näkymästä.
 
@@ -23,9 +23,9 @@ Pelin suorittamisen jälkeen näytetään pelaajan tulos ja annetaan mahdollisuu
 
 Kaikista ikkunoista voi myös siirtyä napilla edelliseen näkymään tai päävalikkoon.
 
-##Perusversion tarjoama toiminnallisuus
+## Perusversion tarjoama toiminnallisuus
 
-###Ennen kirjautumista 
+### Ennen kirjautumista 
 
 * käyttäjä voi luoda järjestelmään käyttäjätunnuksen
   * käyttäjätunnus on uniikki ja vähintään 3 merkkiä
@@ -34,7 +34,7 @@ Kaikista ikkunoista voi myös siirtyä napilla edelliseen näkymään tai pääv
   * kirjautuminen onnistuu syöttäessä olemassaoleva käyttäjätunnus kirjautumislomakkeelle
 * jos käyttäjää ei ole olemassa, ilmoittaa järjestelmä tästä
 
-###Kirjautumisen jälkeen
+### Kirjautumisen jälkeen
 
 * Päävalikko
   * käyttäjä voi siirtyä harjoitusvalikkoon (Practice!)
@@ -67,7 +67,7 @@ Kaikista ikkunoista voi myös siirtyä napilla edelliseen näkymään tai pääv
 
 * Käyttäjän uloskirjautuessa käyttäjän oma lista ja listaan liittyvä paras harjoituksen tulos tallennetaan seuraavaa käyttökertaa varten
 
-##Jatkokehitysideoita
+## Jatkokehitysideoita
 
 * Enemmän statistiikkaa pelaajan suoriutumisesta harjoituksissa (esim. vastaukseen kulunut aika, vaikeimmat merkit harjoitusten perusteella)
 * Uusia harjoituspelejä
