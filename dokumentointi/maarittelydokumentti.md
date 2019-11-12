@@ -43,8 +43,8 @@ Kaikista ikkunoista voi myös siirtyä napilla edelliseen näkymään tai pääv
   * käyttäjä voi kirjautua ulos
 
 * Harjoitusvalikko
- * käyttäjä voi valita harjoituksen kolmesta vaihtoehdosta
- * käyttäjä voi palata päävalikkoon
+  * käyttäjä voi valita harjoituksen kolmesta vaihtoehdosta
+  * käyttäjä voi palata päävalikkoon
 
 * Harjoitusnäkymä (Practice!)
   * käyttäjä näkee kysytyn kirjoitusmerkin
