@@ -1,1 +1,4 @@
-*päivä* 12.11.2019 *aika* 3 *mitä tein* alustava määrittelydokumentti 
+*päivä*    | *aika* | *mitä tein*|
+-----------| -------|------------|
+12.11.2019 | 3      | alustava määrittelydokumentti
+yht        | 3
