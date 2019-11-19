@@ -30,6 +30,14 @@ Some changes:
 
 [tyoaikakirjanpito.md](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
----
+### Viikko 3
+
+[luokkakaavio_monopoli.png](https://github.com/kafenoir/ot-harjoitustyo/blob/master/laskarit/viikko3/luokkakaavio_monopoli.png)
+
+[luokkakaavio_monopoli_extended.png](https://github.com/kafenoir/ot-harjoitustyo/blob/master/laskarit/viikko3/luokkakaavio_monopoli_extended.png)
+
+[sekvenssikaavio_machine.png](https://github.com/kafenoir/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaavio_machine.png)
+
+[sekvenssikaavio_hsl.png](https://github.com/kafenoir/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaavio_hsl.png)
 
 
