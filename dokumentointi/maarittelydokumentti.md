@@ -27,20 +27,20 @@ Kaikista ikkunoista voi myös siirtyä napilla edelliseen näkymään tai pääv
 
 ### Ennen kirjautumista 
 
-* käyttäjä voi luoda järjestelmään käyttäjätunnuksen
-  * käyttäjätunnus on uniikki ja vähintään 3 merkkiä
+* käyttäjä voi luoda järjestelmään käyttäjätunnuksen "tehty"
+  * käyttäjätunnus on uniikki ja vähintään 3 merkkiä "tehty"
 
 * käyttäjä voi kirjautua järjestelmään
-  * kirjautuminen onnistuu syöttäessä olemassaoleva käyttäjätunnus kirjautumislomakkeelle
-* jos käyttäjää ei ole olemassa, ilmoittaa järjestelmä tästä
+  * kirjautuminen onnistuu syöttäessä olemassaoleva käyttäjätunnus kirjautumislomakkeelle "tehty"
+* jos käyttäjää ei ole olemassa, ilmoittaa järjestelmä tästä "tehty"
 
 ### Kirjautumisen jälkeen
 
 * Päävalikko
   * käyttäjä voi siirtyä harjoitusvalikkoon (Practice!)
   * käyttäjä voi siirtyä omaan listaan (My List)
-  * käyttäjä voi siirtyä sanakirjaa (Dictionary)
-  * käyttäjä voi kirjautua ulos
+  * käyttäjä voi siirtyä sanakirjaa (Dictionary) "tehty"
+  * käyttäjä voi kirjautua ulos "tehty"
 
 * Harjoitusvalikko
   * käyttäjä voi valita harjoituksen kolmesta vaihtoehdosta
