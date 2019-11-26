@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Properties;
 import hanzipractice.domain.HPService;
 import hanzipractice.dao.FileUserDao;
+import hanzipractice.dao.FileWordDao;
+import hanzipractice.dao.MyListFileDao;
 
 public class TextUI {
 
@@ -36,9 +38,14 @@ public class TextUI {
 
         String userFile = properties.getProperty("userFile");
         String dictionaryFile = properties.getProperty("dictionaryFile");
+        String myListFile = properties.getProperty("myListFile");
 
         FileUserDao userDao = new FileUserDao(userFile);
-        hpService = new HPService(userDao);
+        FileWordDao wordDao = new FileWordDao(dictionaryFile);
+        MyListFileDao myListDao = new MyListFileDao(myListFile);
+        hpService = new HPService(userDao, wordDao, myListDao);
+        hpService.readDictionary();
+        hpService.createMyLists();
 
     }
 
@@ -164,7 +171,25 @@ public class TextUI {
     }
 
     public void dictionary() {
-        System.out.println("WIP");
+        System.out.println("\n-- Dictionary --\n");
+        hpService.printDictionary();
+        System.out.println("Commands:");
+        System.out.println("<number>, to add the corresponding word to My List ");
+        System.out.println("m, go to My List");
+        System.out.println("q, go to Main Menu");
+        String i = reader.nextLine();
+        while (true) {
+            if (i.equals("m")) {
+                myWordList();
+            } else if (i.equals("q")) {
+                mainMenu();
+            } else if (Integer.valueOf(i) > 0 && Integer.valueOf(i) < 50) {
+                
+            } else {
+                System.out.println("Invalid command!");
+            }
+        }
+
     }
 
 }
