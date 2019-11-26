@@ -45,6 +45,7 @@ public class TextUI {
     public void startMenu() {
 
         while (true) {
+            System.out.println("\n-- Start -- \n");
             System.out.println("1: Login");
             System.out.println("2: Create New User\n");
             System.out.print("Select action by inputting corresponding number: ");
@@ -61,7 +62,7 @@ public class TextUI {
 
     public void login() {
 
-        System.out.println("-- Login -- \n");
+        System.out.println("\n-- Login -- \n");
 
         while (true) {
 
@@ -82,12 +83,12 @@ public class TextUI {
 
     public void newUser() {
 
-        System.out.println("-- Create New User -- \n");
+        System.out.println("\n-- Create New User -- \n");
 
         while (true) {
             System.out.print("Input username: ");
             String name = reader.nextLine();
-            System.out.print("Input name: ");
+            System.out.print("\nInput name: ");
             String newUsername = reader.nextLine();
 
             if (newUsername.length() < 2 || name.length() < 2) {
@@ -95,10 +96,10 @@ public class TextUI {
                 System.out.println("Username or name too short!");
 
             } else if (hpService.createUser(newUsername, name)) {
-                System.out.println("New user created!");
+                System.out.println("\nNew user created!");
                 login();
             } else {
-                System.out.println("Username has to be unique!");
+                System.out.println("\nUsername has to be unique!");
             }
         }
 
@@ -106,7 +107,7 @@ public class TextUI {
 
     public void mainMenu() {
 
-        System.out.println("-- Main Menu -- user:" + username + "\n");
+        System.out.println("\n-- Main Menu -- user:" + username + "\n");
 
         while (true) {
             System.out.println("1: Practice!");
@@ -135,7 +136,7 @@ public class TextUI {
 
     public void practice() {
 
-        System.out.println("-- Practice! -- \n");
+        System.out.println("\n-- Practice! -- \n");
 
         while (true) {
 
