@@ -21,6 +21,10 @@ Testikattavuusraportti luodaan komennolla
 
 >mvn jacoco:report
 
+## Viikon 5 release
+
+[Release](https://github.com/kafenoir/ot-harjoitustyo/releases/download/viikko5/hanzipractice-0.1.jar)
+
 
 
 
