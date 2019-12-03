@@ -3,4 +3,5 @@
 12.11.2019 | 3      | alustava määrittelydokumentti
 19.11.2019 | 7      | uuden käyttäjätunnuksen luonti ja login, tekstipohjainen UI placeholder 
 26.11.2019 | 8      | sanakirjan toteutus valmis, omat listat osittain toteutettu
-yht        | 18     | 
+03.12.2019 | 11     | oman listan luominen, muokkaaminen ja tallennus toteutettu
+yht        | 29     | 
