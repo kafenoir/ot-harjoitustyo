@@ -1,7 +1,7 @@
 # Arkkitehtuurikuvaus
 ## Rakenne
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
-![pakkausrakenne](/kuvat/pakkausrakenne.png)
+![pakkausrakenne](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/kuvat/pakkausrakenne.png)
 
 Pakkaus hanzipractice.ui sisältää JavaFX:llä toteutetun käyttöliittymä, hanzipractice.domain sovelluslogiikan ja hanzipractice.dao tietojen pysyväistallennuksesta vastaavan koodin.
 
