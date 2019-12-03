@@ -31,4 +31,18 @@ public class Word {
         return engTrans;
     }
 
+    @Override
+    public String toString() {
+        return String.format("%2s %2s %15s %15s", id, hanzi, pinyin, engTrans);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Word)) {
+            return false;
+        }
+        Word other = (Word) obj;
+        return id == other.id;
+    }
+
 }

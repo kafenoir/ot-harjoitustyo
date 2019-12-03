@@ -33,7 +33,6 @@ public class TextUI extends Application {
         MyListFileDao myListDao = new MyListFileDao(myListFile);
         hpService = new HPService(userDao, wordDao, myListDao);
         hpService.readDictionary();
-        hpService.createMyLists();
 
     }
 
@@ -90,6 +89,7 @@ public class TextUI extends Application {
                 startMenu();
             } else if (hpService.login(aUsername)) {
                 this.username = aUsername;
+                hpService.readMyLists();
                 mainMenu();
             } else {
                 System.out.println("User does not exist!");
@@ -104,9 +104,9 @@ public class TextUI extends Application {
 
         while (true) {
             System.out.print("Input username: ");
-            String name = reader.nextLine();
-            System.out.print("\nInput name: ");
             String newUsername = reader.nextLine();
+            System.out.print("\nInput name: ");
+            String name = reader.nextLine();
 
             if (newUsername.length() < 2 || name.length() < 2) {
 
@@ -177,7 +177,35 @@ public class TextUI extends Application {
 
     public void myWordList() {
 
-        System.out.println("WIP");
+        System.out.println("\n-- My Word List --\n");
+
+        hpService.printMyList();
+        while (true) {
+            System.out.println("Commands:");
+            System.out.println("a, add words from the dictionary");
+            System.out.println("r, remove a word");
+            System.out.println("q, go to Main Menu");
+            System.out.print("Input command: ");
+            String i = reader.nextLine();
+
+            if (i.equals("a")) {
+                dictionary();
+            } else if (i.equals("r")) {
+                System.out.print("Remove a word by inputting its number: ");
+                try {
+                    int n = Integer.valueOf(reader.nextLine());
+                    System.out.println(hpService.removeWordFromMyList(n));
+                    hpService.printMyList();
+                } catch (Exception ex) {
+                    System.out.println("Invalid command!");
+                }
+            } else if (i.equals("q")) {
+                mainMenu();
+            } else {
+                System.out.println("Invalid command!");
+            }
+        }
+
     }
 
     public void dictionary() {
@@ -187,13 +215,16 @@ public class TextUI extends Application {
         System.out.println("<number>, to add the corresponding word to My List ");
         System.out.println("m, go to My List");
         System.out.println("q, go to Main Menu");
-        String i = reader.nextLine();
         while (true) {
+            System.out.print("Input command: ");
+            String i = reader.nextLine();
             if (i.equals("m")) {
                 myWordList();
             } else if (i.equals("q")) {
                 mainMenu();
             } else if (Integer.valueOf(i) > 0 && Integer.valueOf(i) < 50) {
+                hpService.addWordToMyList(Integer.valueOf(i));
+                System.out.println("Word added!");
 
             } else {
                 System.out.println("Invalid command!");
@@ -204,7 +235,7 @@ public class TextUI extends Application {
     @Override
     public void stop() {
 
-        System.out.println("sovellus sulkeutuu");
+        System.out.println("See ya!");
         System.exit(0);
     }
 

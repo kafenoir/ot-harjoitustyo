@@ -20,6 +20,8 @@ public class HPService {
     private WordDao wordDao;
     private Dictionary dictionary;
     private MyListDao myListDao;
+    private MyList myList;
+    private HashMap<String, ArrayList<Integer>> myLists;
 
     public HPService(UserDao userDao, WordDao wordDao, MyListDao myListDao) {
         this.userDao = userDao;
@@ -91,18 +93,49 @@ public class HPService {
         System.out.println(dictionary);
     }
 
-    public void createMyLists() {
+    public void printMyList() {
 
-        HashMap<String, int[]> m = myListDao.getAll();
-        for (HashMap.Entry<String, int[]> pair : m.entrySet()) {
-            ArrayList<Word> words = new ArrayList<>();
-            MyList mlist = new MyList(userDao.findByUsername(pair.getKey()));
+        System.out.println(myList);
+    }
 
-            for (int i = 0; i < pair.getValue().length; i++) {
-                mlist.addWord(pair.getValue()[i], dictionary);
+    public void readMyLists() {
+
+        myLists = myListDao.getAll();
+        ArrayList<Word> wl = new ArrayList<>();
+        if (!myLists.isEmpty()) {
+
+            for (Integer i : myLists.get(loggedIn.getUsername())) {
+                Word w = dictionary.searchByWordID(i);
+                wl.add(w);
             }
+        }
+        myList = new MyList(loggedIn, wl);
+    }
+
+//    public void writeMyLists() {
+//        
+//        HashMap
+//    }
+    public void addWordToMyList(int id) {
+        myList.addWord(id, dictionary);
+        editMyLists();
+    }
+
+    public String removeWordFromMyList(int id) {
+        if (myList.removeWord(id)) {
+            editMyLists();
+            return "Word removed!";
+        }
+        return "Invalid command!";
+    }
+
+    public void editMyLists() {
+        myLists.put(loggedIn.getUsername(), myList.getWordIds());
+        try {
+            myListDao.edit(myLists);
+
+        } catch (Exception ex) {
 
         }
     }
-
 }

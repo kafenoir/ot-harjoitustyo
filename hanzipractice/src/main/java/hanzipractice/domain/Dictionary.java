@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Dictionary {
 
-    private List<Word> dictionary;
+    private List<Word> words;
 
     public Dictionary(List words) {
 
-        this.dictionary = words;
+        this.words = words;
     }
     
     public Word searchByWordID(int id) {
-        return dictionary.stream()
+        return words.stream()
                 .filter(w -> w.getID() == id)
                 .findFirst()
                 .orElse(null);
@@ -23,9 +23,8 @@ public class Dictionary {
     @Override
     public String toString() {
         StringBuilder lB = new StringBuilder();
-        for (Word word : dictionary) {
-            lB.append(word.getID() + "\t" + word.getHanzi()
-                    + "\t" + word.getPinyin() + "\t\t" + word.getEngTrans() + "\n");
+        for (Word word : words) {
+            lB.append(word.toString() + "\n");
         }
         String l = lB.toString();
         return l;

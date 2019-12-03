@@ -5,8 +5,8 @@ import hanzipractice.domain.Word;
 
 public interface WordDao {
 
-    List<Word> getAll();
-
     Word findByID(int id);
+
+    List<Word> getAll();
 
 }

@@ -1,19 +1,16 @@
 package hanzipractice.domain;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyList {
 
-    private List<Word> myList;
+    private List<Word> words;
     private User user;
 
-    public MyList(User user) {
+    public MyList(User user, List<Word> words) {
         this.user = user;
-
-    }
-
-    public void setWords() {
+        this.words = words;
 
     }
 
@@ -21,30 +18,41 @@ public class MyList {
         return user;
     }
 
-    public String getWordsAsString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < myList.size() - 1; i++) {
-            Word word = myList.get(i);
-            sb.append(word);
-            sb.append(";");
+    public ArrayList<Integer> getWordIds() {
+
+        ArrayList<Integer> wl = new ArrayList();
+        for (Word word : words) {
+            wl.add(word.getID());
         }
 
-        sb.append(myList.get(myList.size() - 1).getID());
-        return sb.toString();
+        return wl;
 
     }
 
     public void addWord(int id, Dictionary dictionary) {
 
-        myList.add(dictionary.searchByWordID(id));
+        words.add(dictionary.searchByWordID(id));
 
     }
 
-    public void removeWord(int id) {
-        for (Word word : myList) {
+    public boolean removeWord(int id) {
+        for (Word word : words) {
             if (word.getID() == id) {
-                myList.remove(word);
+                words.remove(word);
+                return true;
             }
         }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder lB = new StringBuilder();
+        for (Word word : words) {
+            lB.append(word.toString() + "\n");
+        }
+        String l = lB.toString();
+        return l;
+
     }
 }

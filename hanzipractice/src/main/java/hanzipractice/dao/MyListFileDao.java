@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class MyListFileDao implements MyListDao {
 
     private String file;
-    private HashMap<String, int[]> myLists;
+    private HashMap<String, ArrayList<Integer>> myLists;
 
     public MyListFileDao(String file) throws Exception {
 
@@ -23,9 +23,9 @@ public class MyListFileDao implements MyListDao {
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
                 String username = parts[0];
-                int[] words = new int[parts.length - 1];
+                ArrayList<Integer> words = new ArrayList<>();
                 for (int i = 1; i < parts.length; i++) {
-                    words[i - 1] = Integer.valueOf(parts[i]);
+                    words.add(Integer.valueOf(parts[i]));
                 }
                 myLists.put(username, words);
             }
@@ -35,18 +35,33 @@ public class MyListFileDao implements MyListDao {
             writer.close();
         }
     }
+    
+    private void save() throws Exception{
+        try (FileWriter writer = new FileWriter(new File(file))) {
+            
+            for (HashMap.Entry<String, ArrayList<Integer>> entry : myLists.entrySet()) {
+                String user = entry.getKey();
+                ArrayList<Integer> wordlist = entry.getValue();
+                writer.write(user + ";");
+                for (int i = 0; i < wordlist.size()-1; i++) {
+                    writer.write(wordlist.get(i) + ";"); 
+                }
+                writer.write(wordlist.get(wordlist.size()-1) + ";");
+            }
+        }
+        
+    }
 
-//    public void save() throws Exception {
-//        
-//        try (FileWriter writer = new FileWriter(new File(file))) {
-//            for (MyList myList : myLists) {
-//                writer.write(myList.getUser().getUsername() + ";" + myList.getWordsAsString() + "\n");
-//                
-//            }
-//        }
-//    }
     @Override
-    public HashMap<String, int[]> getAll() {
+    public boolean edit(HashMap<String, ArrayList<Integer>> ml) throws Exception {
+        this.myLists = ml;
+        save();
+        return true;
+    }
+        
+    
+    @Override
+    public HashMap<String, ArrayList<Integer>> getAll() {
         return myLists;
     }
 }
