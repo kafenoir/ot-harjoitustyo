@@ -58,12 +58,12 @@ Kaikista ikkunoista voi myös siirtyä napilla edelliseen näkymään tai pääv
   * hän voi yrittää harjoitusta uudestaan tai siirtyä päävalikkoon
 
 * Oma lista-näkymä (My List)
-  * käyttäjä näkee oman sanalistansa, joka on alkuun tyhjä
-  * käyttäjä voi lisätä sanan/sanoja, jolloin siirrytään valitsemaan sana/sanat sanakirjasta
-  * käyttäjä voi poistaa sanan omasta listasta
+  * käyttäjä näkee oman sanalistansa, joka on alkuun tyhjä "tehty"
+  * käyttäjä voi lisätä sanan/sanoja, jolloin siirrytään valitsemaan sana/sanat sanakirjasta "tehty"
+  * käyttäjä voi poistaa sanan omasta listasta  "tehty"
 
 * Sanakirjanäkymä (Dictionary)
-  * Käyttäjä voi lisätä sanoja sanakirjasta omaan listaansa
+  * Käyttäjä voi lisätä sanoja sanakirjasta omaan listaansa "tehty"
 
 * Käyttäjän uloskirjautuessa käyttäjän oma lista ja listaan liittyvä paras harjoituksen tulos tallennetaan seuraavaa käyttökertaa varten
 
