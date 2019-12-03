@@ -8,29 +8,17 @@ import hanzipractice.domain.HPService;
 import hanzipractice.dao.FileUserDao;
 import hanzipractice.dao.FileWordDao;
 import hanzipractice.dao.MyListFileDao;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class TextUI {
+public class TextUI extends Application {
 
     private HPService hpService;
 
     private Scanner reader;
     private String username;
 
-    public void launchUI() {
-
-        try {
-            init();
-        } catch (Exception e) {
-            System.exit(1);
-        }
-
-        reader = new Scanner(System.in);
-
-        System.out.println("Welcome to Hanzi Practice! \n");
-        startMenu();
-
-    }
-
+    @Override
     public void init() throws Exception {
         Properties properties = new Properties();
 
@@ -49,21 +37,43 @@ public class TextUI {
 
     }
 
+    @Override
+    public void start(Stage primaryStage) {
+
+        reader = new Scanner(System.in);
+
+        System.out.println("Welcome to Hanzi Practice! \n");
+        startMenu();
+
+    }
+
     public void startMenu() {
 
         while (true) {
             System.out.println("\n-- Start -- \n");
             System.out.println("1: Login");
             System.out.println("2: Create New User\n");
-            System.out.print("Select action by inputting corresponding number: ");
-            int i = Integer.valueOf(reader.nextLine());
+            System.out.println("3: Exit");
 
-            if (i == 1) {
-                login();
+            while (true) {
+                System.out.print("Select action by inputting corresponding number: ");
+
+                try {
+                    int i = Integer.valueOf(reader.nextLine());
+                    if (i == 1) {
+                        login();
+                    } else if (i == 2) {
+                        newUser();
+                    } else if (i == 3) {
+                        stop();
+                    } else {
+                        System.out.println("Invalid input!");
+                    }
+                } catch (Exception ex) {
+                    System.out.println("Invalid input!");
+                }
             }
-            if (i == 2) {
-                newUser();
-            }
+
         }
     }
 
@@ -73,7 +83,7 @@ public class TextUI {
 
         while (true) {
 
-            System.out.println("input username (or x to exit)");
+            System.out.print("Input username (or x to exit): ");
             String aUsername = reader.nextLine();
 
             if (aUsername.equals("x")) {
@@ -184,12 +194,21 @@ public class TextUI {
             } else if (i.equals("q")) {
                 mainMenu();
             } else if (Integer.valueOf(i) > 0 && Integer.valueOf(i) < 50) {
-                
+
             } else {
                 System.out.println("Invalid command!");
             }
         }
-
     }
 
+    @Override
+    public void stop() {
+
+        System.out.println("sovellus sulkeutuu");
+        System.exit(0);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
