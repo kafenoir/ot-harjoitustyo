@@ -10,6 +10,8 @@ Sovellus on Helsingin Yliopiston Tietojenkäsittelytieteen kurssin Ohjelmistotek
 
 [Työaikakirjanpito](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+
 ## Komentorivitoiminnot
 ### Testaus
 
