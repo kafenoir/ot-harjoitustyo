@@ -56,9 +56,9 @@ public class TextUI extends Application {
 
             while (true) {
                 System.out.print("Select action by inputting corresponding number: ");
-
+                String s = reader.nextLine();
                 try {
-                    int i = Integer.valueOf(reader.nextLine());
+                    int i = Integer.valueOf(s);
                     if (i == 1) {
                         login();
                     } else if (i == 2) {
@@ -71,6 +71,7 @@ public class TextUI extends Application {
                 } catch (Exception ex) {
                     System.out.println("Invalid input!");
                 }
+
             }
 
         }
@@ -90,6 +91,7 @@ public class TextUI extends Application {
             } else if (hpService.login(aUsername)) {
                 this.username = aUsername;
                 hpService.readMyLists();
+                System.out.println("hello");
                 mainMenu();
             } else {
                 System.out.println("User does not exist!");

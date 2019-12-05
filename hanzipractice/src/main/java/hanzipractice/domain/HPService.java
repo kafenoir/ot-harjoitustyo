@@ -100,14 +100,18 @@ public class HPService {
 
     public void readMyLists() {
 
-        myLists = myListDao.getAll();
         ArrayList<Word> wl = new ArrayList<>();
-        if (!myLists.isEmpty()) {
+
+        try {
+            myLists = myListDao.getAll();
 
             for (Integer i : myLists.get(loggedIn.getUsername())) {
                 Word w = dictionary.searchByWordID(i);
                 wl.add(w);
+
             }
+        } catch (Exception ex) {
+
         }
         myList = new MyList(loggedIn, wl);
     }
