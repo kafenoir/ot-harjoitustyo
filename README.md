@@ -13,6 +13,7 @@ Sovellus on Helsingin Yliopiston Tietojenkäsittelytieteen kurssin Ohjelmistotek
 [Arkkitehtuuri](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
 ## Komentorivitoiminnot
+
 ### Testaus
 
 Testit suoritetaan komennolla
@@ -22,6 +23,22 @@ Testit suoritetaan komennolla
 Testikattavuusraportti luodaan komennolla
 
 >mvn jacoco:report
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
+
+### Checkstyle
+
+Tiedoston [checkstyle.xml](https://github.com/kafenoir/ot-harjoitustyo/blob/master/hanzipractice/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+
+>mvn jxr:jxr checkstyle:checkstyle
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
+
+### Suoritettavan JARin generointi
+
+JAR luodaan komennolla
+
+>mvn package
 
 ## Viikon 5 release
 
