@@ -12,6 +12,8 @@ Sovellus on Helsingin Yliopiston Tietojenkäsittelytieteen kurssin Ohjelmistotek
 
 [Arkkitehtuuri](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)
+
 ## Komentorivitoiminnot
 
 ### Testaus
