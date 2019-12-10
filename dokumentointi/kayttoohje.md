@@ -31,7 +31,7 @@ Päävalikossa on valittavissa seuraavat vaihtoehdot
 * Logout
 
 ## Sanojen lisääminen ja poistaminen omasta listasta
-Valitsemalla My Word List pääsee tarkastelemaan oman listan sisältöä. Valitessa "add words to the dictionary", ohjelma siirtyy sanakirjaan, josta voi lisätä sanojan omaan listaan. Valitessa, "remove a word", ohjelma kysyy poistettavaa sanaa, jonka tunnuksen syöttämällä kyseinen sana poistuu listasta.
+Valitsemalla "My Word List" pääsee tarkastelemaan oman listan sisältöä. Valitessa "add words to the dictionary", ohjelma siirtyy sanakirjaan, josta voi lisätä sanojan omaan listaan. Valitessa, "remove a word", ohjelma kysyy poistettavaa sanaa, jonka tunnuksen syöttämällä kyseinen sana poistuu listasta.
 
 ## Sanakirjan tarkastelu 
 Sanakirjaa pääsee tarkastelemaan suoraan valitsemalla päävalikossa "Dictionary". Sanakirjasta voi lisätä sanoja omaan listaan syöttämällä sanan tunnuksen.
