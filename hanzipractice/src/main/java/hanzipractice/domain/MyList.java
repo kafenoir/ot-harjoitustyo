@@ -20,6 +20,10 @@ public class MyList {
     public User getUser() {
         return user;
     }
+    
+    public List<Word> getWords() {
+        return words;
+    }
 
     /**
      * get a presentation of the user's word list as list of word ids
