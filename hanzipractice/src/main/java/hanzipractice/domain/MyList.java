@@ -3,6 +3,9 @@ package hanzipractice.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * class represents user's personal word list
+ */
 public class MyList {
 
     private List<Word> words;
@@ -18,6 +21,11 @@ public class MyList {
         return user;
     }
 
+    /**
+     * get a presentation of the user's word list as list of word ids
+     *
+     * @return user's personal word list as a list of word ids
+     */
     public ArrayList<Integer> getWordIds() {
 
         ArrayList<Integer> wl = new ArrayList();
@@ -29,12 +37,26 @@ public class MyList {
 
     }
 
+    /**
+     * adds a word to the persona list by matching a given id to those in the
+     * dictionary
+     *
+     * @param id word id
+     * @param dictionary the dictionary to be matched with
+     */
     public void addWord(int id, Dictionary dictionary) {
 
         words.add(dictionary.searchByWordID(id));
 
     }
 
+    /**
+     * removes a word from the personal list if it exists
+     *
+     * @param id word id
+     * @return true if the word is successfully removed, false if the word is
+     * not found
+     */
     public boolean removeWord(int id) {
         for (Word word : words) {
             if (word.getID() == id) {
@@ -44,6 +66,12 @@ public class MyList {
         }
         return false;
     }
+
+    /**
+     * builds and returns a printable string of the personal word list
+     *
+     * @return contents of the personal word list as a string
+     */
 
     @Override
     public String toString() {

@@ -7,7 +7,6 @@ import java.util.HashMap;
 public interface MyListDao {
 
     HashMap<String, ArrayList<Integer>> getAll();
-    
 
     boolean edit(HashMap<String, ArrayList<Integer>> myLists) throws Exception;
 

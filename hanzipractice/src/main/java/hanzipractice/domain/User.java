@@ -1,6 +1,8 @@
 package hanzipractice.domain;
 
-//class represents the user
+/**
+ * class represents the user
+ */
 public class User {
 
     private String username;

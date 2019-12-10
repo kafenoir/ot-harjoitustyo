@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 import hanzipractice.domain.Word;
 
+/**
+ * class handles the reading of the dictionary file
+ */
 public class FileWordDao implements WordDao {
 
     private List<Word> words;

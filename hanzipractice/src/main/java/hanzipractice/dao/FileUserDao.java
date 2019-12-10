@@ -7,11 +7,26 @@ import java.util.List;
 import java.util.Scanner;
 import hanzipractice.domain.User;
 
+/**
+ *
+ * class handles the reading and writing of the file that contains names
+ * andusernames
+ *
+ */
 public class FileUserDao implements UserDao {
 
     private List<User> users;
     private String file;
 
+    /**
+     * reads the users file, creates users from the lines and adds them to a
+     * list
+     *
+     * if a users file is not found, creates a new users file
+     *
+     * @param file the name of the file with the usernames
+     * @throws Exception
+     */
     public FileUserDao(String file) throws Exception {
         users = new ArrayList<>();
         this.file = file;
@@ -28,6 +43,11 @@ public class FileUserDao implements UserDao {
         }
     }
 
+    /**
+     * saves a new user to the users file
+     *
+     * @throws Exception
+     */
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
@@ -41,6 +61,13 @@ public class FileUserDao implements UserDao {
         return users;
     }
 
+    /**
+     * finds users from the list based on username
+     *
+     * @param username
+     * @return user if matching user found on the list, null if matching user
+     * not found
+     */
     @Override
     public User findByUsername(String username) {
         return users.stream()
@@ -50,6 +77,13 @@ public class FileUserDao implements UserDao {
                 .orElse(null);
     }
 
+    /**
+     * adds a created user to the list, and saves it to the file
+     *
+     * @param user Object representing the user
+     * @return Object representing the user
+     * @throws Exception
+     */
     @Override
     public User create(User user) throws Exception {
         users.add(user);

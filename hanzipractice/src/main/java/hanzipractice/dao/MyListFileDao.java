@@ -35,21 +35,21 @@ public class MyListFileDao implements MyListDao {
             writer.close();
         }
     }
-    
-    private void save() throws Exception{
+
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
-            
+
             for (HashMap.Entry<String, ArrayList<Integer>> entry : myLists.entrySet()) {
                 String user = entry.getKey();
                 ArrayList<Integer> wordlist = entry.getValue();
                 writer.write(user + ";");
-                for (int i = 0; i < wordlist.size()-1; i++) {
-                    writer.write(wordlist.get(i) + ";"); 
+                for (int i = 0; i < wordlist.size() - 1; i++) {
+                    writer.write(wordlist.get(i) + ";");
                 }
-                writer.write(wordlist.get(wordlist.size()-1) + ";");
+                writer.write(wordlist.get(wordlist.size() - 1) + ";");
             }
         }
-        
+
     }
 
     @Override
@@ -58,8 +58,7 @@ public class MyListFileDao implements MyListDao {
         save();
         return true;
     }
-        
-    
+
     @Override
     public HashMap<String, ArrayList<Integer>> getAll() {
         return myLists;

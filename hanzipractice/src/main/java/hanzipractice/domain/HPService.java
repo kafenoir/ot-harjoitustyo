@@ -85,19 +85,33 @@ public class HPService {
         return loggedIn;
     }
 
+    /**
+     * creates a dictionary from the dictionary file
+     */
     public void readDictionary() {
         this.dictionary = new Dictionary(wordDao.getAll());
     }
 
+    /**
+     * prints the dictionary
+     */
     public void printDictionary() {
         System.out.println(dictionary);
     }
 
+    /**
+     * prints the user's personal word list
+     */
     public void printMyList() {
 
         System.out.println(myList);
     }
 
+    /**
+     * creates a personal word list for the logged user by matching IDs of the
+     * words in the dictionary with those saved as a sequence in MyList file
+     *
+     */
     public void readMyLists() {
 
         ArrayList<Word> wl = new ArrayList<>();
@@ -116,15 +130,26 @@ public class HPService {
         myList = new MyList(loggedIn, wl);
     }
 
-//    public void writeMyLists() {
-//        
-//        HashMap
-//    }
+    /**
+     * adds a word to the user's personal word list by matching the given ID
+     * with word ID's in the dictionary
+     *
+     * @param id user inputted word ID
+     */
     public void addWordToMyList(int id) {
         myList.addWord(id, dictionary);
         editMyLists();
     }
 
+    /**
+     * removes a word with matching ID from the user's personal word list or
+     * returns and error message if a matching word is not on the list
+     *
+     * @param id user inputted word ID
+     *
+     * @return String "Word removed! if word is on the list, String "Invalid
+     * Command!" if word is not on the list
+     */
     public String removeWordFromMyList(int id) {
         if (myList.removeWord(id)) {
             editMyLists();
@@ -133,6 +158,9 @@ public class HPService {
         return "Invalid command!";
     }
 
+    /**
+     * saves changes to the personal list into the file
+     */
     public void editMyLists() {
         myLists.put(loggedIn.getUsername(), myList.getWordIds());
         try {

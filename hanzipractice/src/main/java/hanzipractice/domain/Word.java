@@ -31,6 +31,11 @@ public class Word {
         return engTrans;
     }
 
+    /**
+     *
+     * @return word's id, hanzi, pinyin and the English translation as a
+     * formatted string
+     */
     @Override
     public String toString() {
         return String.format("%2s %2s %15s %15s", id, hanzi, pinyin, engTrans);
