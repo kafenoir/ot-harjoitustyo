@@ -137,7 +137,7 @@ public class TextUI extends Application {
             int i = Integer.valueOf(reader.nextLine());
 
             if (i == 1) {
-                practice();
+                practiceMenu();
             }
             if (i == 2) {
                 myWordList();
@@ -153,7 +153,7 @@ public class TextUI extends Application {
         }
     }
 
-    public void practice() {
+    public void practiceMenu() {
 
         System.out.println("\n-- Practice! -- \n");
 
@@ -166,15 +166,35 @@ public class TextUI extends Application {
             int i = Integer.valueOf(reader.nextLine());
 
             if (i == 1) {
-                System.out.println("Under construction!");
+                practice(1);
             }
             if (i == 2) {
-                System.out.println("Under construction!");
+                practice(2);
             }
             if (i == 3) {
                 mainMenu();
             }
         }
+    }
+
+    public void practice(int type) {
+
+        hpService.createPractice();
+
+        while (!hpService.isOver()) {
+            System.out.println(hpService.askQuestion());
+            System.out.print("Input answer: ");
+            String answer = reader.nextLine();
+            if (hpService.isCorrect(answer, type)) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("Incorrect!");
+            }
+        }
+        System.out.println("You scored " + hpService.gameOver() + "!");
+        System.out.println("Try again? y/n");
+        
+
     }
 
     public void myWordList() {

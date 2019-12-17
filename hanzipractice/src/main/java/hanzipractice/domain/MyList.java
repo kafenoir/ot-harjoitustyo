@@ -10,10 +10,12 @@ public class MyList {
 
     private List<Word> words;
     private User user;
+    private int score;
 
     public MyList(User user, List<Word> words) {
         this.user = user;
         this.words = words;
+        this.score = 0;
 
     }
 
@@ -40,6 +42,14 @@ public class MyList {
         return wl;
 
     }
+    
+    public void setNewHighScore(int score) {
+        
+        if (score > this.score) {
+            this.score = score;
+        }
+        
+    }
 
     /**
      * adds a word to the persona list by matching a given id to those in the
@@ -51,6 +61,7 @@ public class MyList {
     public void addWord(int id, Dictionary dictionary) {
 
         words.add(dictionary.searchByWordID(id));
+        score = 0;
 
     }
 
@@ -65,11 +76,13 @@ public class MyList {
         for (Word word : words) {
             if (word.getID() == id) {
                 words.remove(word);
+                score = 0;
                 return true;
             }
         }
         return false;
     }
+    
 
     /**
      * builds and returns a printable string of the personal word list
@@ -83,6 +96,7 @@ public class MyList {
         for (Word word : words) {
             lB.append(word.toString() + "\n");
         }
+        lB.append("Your highest score for this list is " + this.score + "/" + words.size() + ".");
         String l = lB.toString();
         return l;
 

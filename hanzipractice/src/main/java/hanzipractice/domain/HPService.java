@@ -22,6 +22,8 @@ public class HPService {
     private MyListDao myListDao;
     private MyList myList;
     private HashMap<String, ArrayList<Integer>> myLists;
+    private Practice practice;
+    
 
     public HPService(UserDao userDao, WordDao wordDao, MyListDao myListDao) {
         this.userDao = userDao;
@@ -169,5 +171,45 @@ public class HPService {
         } catch (Exception ex) {
 
         }
+    }
+    
+    public void createPractice() {
+        
+        this.practice = new Practice(myList);
+        
+    }
+    
+    public String askQuestion() {
+        
+        Word q = practice.askWord();
+        String question = q.getHanzi();
+        return question;
+        
+    }
+    
+    public Boolean isCorrect(String answer, int type) {
+        if (type == 1) {
+            if (practice.isCorrectPinyin(answer)) {
+                return true;
+            }
+        }
+        if (type == 2) {
+            if (practice.isCorrectEng(answer)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Boolean isOver() {
+        if (practice.getSize() == 0) {
+            return true;
+        }
+        return false;
+    }
+    
+    public String gameOver() {
+        myList.setNewHighScore(practice.getScore());
+        return practice.getScoreAsString();
     }
 }
