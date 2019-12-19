@@ -43,6 +43,15 @@ public class MyList {
 
     }
     
+    public ArrayList<String> getWordsAsStrings() {
+        ArrayList<String> wordStrings = new ArrayList<>();
+        for (Word word : words) {
+            wordStrings.add(word.toString());
+        }
+        
+        return wordStrings;
+    }
+    
     public void setNewHighScore(int score) {
         
         if (score > this.score) {

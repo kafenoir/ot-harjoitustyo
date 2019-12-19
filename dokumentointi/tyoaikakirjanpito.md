@@ -6,4 +6,5 @@
 03.12.2019 | 11     | oman listan luominen, muokkaaminen ja tallennus toteutettu
 10.12.2019 | 6      | lisätty ja päivitetty dokumentaatiota, aloitettu sanapelin toteutus
 17.12.2019 | 4      | sanapelin kehittämistä (melkein valmis)
-yht        | 39     | 
+18.12.2019 | 6      | aloitettu graafisen käyttöliittymän toteuttaminen
+yht        | 45     | 

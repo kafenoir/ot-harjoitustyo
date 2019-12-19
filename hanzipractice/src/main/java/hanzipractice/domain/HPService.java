@@ -23,7 +23,6 @@ public class HPService {
     private MyList myList;
     private HashMap<String, ArrayList<Integer>> myLists;
     private Practice practice;
-    
 
     public HPService(UserDao userDao, WordDao wordDao, MyListDao myListDao) {
         this.userDao = userDao;
@@ -104,9 +103,13 @@ public class HPService {
     /**
      * prints the user's personal word list
      */
-    public void printMyList() {
+    public String printMyList() {
 
-        System.out.println(myList);
+        return myList.toString();
+    }
+
+    public ArrayList<String> myListAsStrings() {
+        return myList.getWordsAsStrings();
     }
 
     /**
@@ -116,17 +119,21 @@ public class HPService {
      */
     public void readMyLists() {
 
-        ArrayList<Word> wl = new ArrayList<>();
-
         try {
             myLists = myListDao.getAll();
 
-            for (Integer i : myLists.get(loggedIn.getUsername())) {
-                Word w = dictionary.searchByWordID(i);
-                wl.add(w);
-
-            }
         } catch (Exception ex) {
+
+        }
+
+    }
+
+    public void createMyList() {
+
+        ArrayList<Word> wl = new ArrayList<>();
+        for (Integer i : myLists.get(loggedIn.getUsername())) {
+            Word w = dictionary.searchByWordID(i);
+            wl.add(w);
 
         }
         myList = new MyList(loggedIn, wl);
@@ -172,21 +179,21 @@ public class HPService {
 
         }
     }
-    
+
     public void createPractice() {
-        
+
         this.practice = new Practice(myList);
-        
+
     }
-    
+
     public String askQuestion() {
-        
+
         Word q = practice.askWord();
         String question = q.getHanzi();
         return question;
-        
+
     }
-    
+
     public Boolean isCorrect(String answer, int type) {
         if (type == 1) {
             if (practice.isCorrectPinyin(answer)) {
@@ -200,14 +207,14 @@ public class HPService {
         }
         return false;
     }
-    
+
     public Boolean isOver() {
         if (practice.getSize() == 0) {
             return true;
         }
         return false;
     }
-    
+
     public String gameOver() {
         myList.setNewHighScore(practice.getScore());
         return practice.getScoreAsString();
