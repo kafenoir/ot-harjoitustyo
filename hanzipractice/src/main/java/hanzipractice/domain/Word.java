@@ -38,7 +38,7 @@ public class Word {
      */
     @Override
     public String toString() {
-        return String.format("%2s %2s %15s %15s", id, hanzi, pinyin, engTrans);
+        return String.format("%s %2s %15s %15s", id, hanzi, pinyin, engTrans);
     }
 
     @Override

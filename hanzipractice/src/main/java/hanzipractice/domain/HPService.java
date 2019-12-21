@@ -100,6 +100,10 @@ public class HPService {
         System.out.println(dictionary);
     }
 
+    public ArrayList<String> dictionaryAsStrings() {
+        return dictionary.getDictionaryAsStrings();
+    }
+
     /**
      * prints the user's personal word list
      */
@@ -145,8 +149,9 @@ public class HPService {
      *
      * @param id user inputted word ID
      */
-    public void addWordToMyList(int id) {
-        myList.addWord(id, dictionary);
+    public void addWordToMyList(String wordAsString) {
+        String[] wordTable = wordAsString.split(" ");
+        myList.addWord(Integer.valueOf(wordTable[0]), dictionary);
         editMyLists();
     }
 
@@ -159,12 +164,14 @@ public class HPService {
      * @return String "Word removed! if word is on the list, String "Invalid
      * Command!" if word is not on the list
      */
-    public String removeWordFromMyList(int id) {
-        if (myList.removeWord(id)) {
+    public void removeWordFromMyList(String wordAsString) {
+
+        String[] wordTable = wordAsString.split(" ");
+        if (myList.removeWord(Integer.valueOf(wordTable[0]))) {
             editMyLists();
-            return "Word removed!";
+
         }
-        return "Invalid command!";
+
     }
 
     /**
@@ -189,6 +196,10 @@ public class HPService {
     public String askQuestion() {
 
         Word q = practice.askWord();
+        if (q == null) {
+            return "GAME OVER";
+        }
+        
         String question = q.getHanzi();
         return question;
 

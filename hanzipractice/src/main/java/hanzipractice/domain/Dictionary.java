@@ -13,7 +13,16 @@ public class Dictionary {
 
     public Dictionary(List words) {
 
-        this.words = words;
+        this.words = new ArrayList<Word>();
+        this.words.addAll(words);
+    }
+    
+    public ArrayList<String> getDictionaryAsStrings() {
+        ArrayList<String> wordStrings = new ArrayList<String>();
+        for (Word word: words) {
+            wordStrings.add(word.toString());
+        }
+        return wordStrings;
     }
 
     /**

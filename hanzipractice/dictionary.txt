@@ -1,20 +1,50 @@
-1;a;apina;monkey
-2;b;banaani;banana
-3;c;cd-asema;cd-drive
-4;e;elefantti;elephant
-5;f;faarao;pharaoh
-6;g;golf;golf
-7;h;houkutus;temptation
-8;i;ihme;miracle
-9;j;joukkue;team
-10;k;kissa;cat
-11;l;linna;castle
-12;m;muurahainen;ant
-13;n;naula;nail
-14;o;omena;apple
-15;p;pullo;bottle
-16;r;risti;cross
-17;s;sika;pig
-18;t;toivo;hope
-19;u;ukkonen;thunder
-20;v;vaisto;instinct
+1;一;yi1;one
+2;儿;er4;two
+3;三;san1;three
+4;四;si4;four
+5;五;wu3;five
+6;六;liu4;six
+7;七;qi1;seven
+8;八;ba1;eight
+9;九;jiu3;nine
+10;十;shi2;ten
+11;我;wo3;I
+12;你;ni3;you
+13;他;ta1;he
+14;她;ta1;she
+15;叫;jiao4;to be called
+16;什么;shen2me;what
+17;名字;ming2zi;name
+18;姓;xing4;surname
+19;老师;lao3shi1;teacher
+20;是;shi4;to be
+21;哪;na3;which
+22;很;hen3;very
+23;高;gao1;tall
+24;认识;ren4shi;to get to know
+25;也;ye3;also
+26;中;zhong1;middle
+27;人;ren2;people
+28;这;zhe4;this
+29;学生;xue2sheng;student
+30;学习;xue2xi2;to study
+31;有;you3;to have
+32;照片;zhao4pian4;photograph
+33;妈妈;ma1ma;mother
+34;爸爸;ba4ba;father
+35;妹妹;mei4mei;younger sister
+36;弟弟;di4di;younger brother
+37;哥哥;ge1ge;elder brother
+38;姐姐;jie3jie;elder sister
+39;奶奶;nai3nai;grandmother
+40;爷爷;ye2ye;grandfather
+41；那;na4;that
+42；对;dui4;correct
+43;狗;gou3;dog
+44;猫;mao1;cat
+45;漂亮;piao4liang;beautiful
+46;可是;ke3shi4;but
+47;鸟;niao3;bird
+48;它;ta1;it
+49;有意思;you3yi4si;interesting
+50;大;da4;big

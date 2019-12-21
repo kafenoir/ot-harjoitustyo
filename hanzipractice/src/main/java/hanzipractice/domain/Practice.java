@@ -31,6 +31,11 @@ public class Practice {
     }
 
     public Word askWord() {
+        
+        if (words.isEmpty()) {
+            return null;
+        }
+        
         Random r = new Random();
 
         Word a = words.get(r.nextInt(words.size()));

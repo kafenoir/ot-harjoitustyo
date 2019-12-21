@@ -7,4 +7,6 @@
 10.12.2019 | 6      | lisätty ja päivitetty dokumentaatiota, aloitettu sanapelin toteutus
 17.12.2019 | 4      | sanapelin kehittämistä (melkein valmis)
 18.12.2019 | 6      | aloitettu graafisen käyttöliittymän toteuttaminen
-yht        | 45     | 
+20.12.2019 | 3      | graafisen käyttöliittymän säätämistä
+21.12.2019 | 5      | graafinen käyttöliittymä lähes toteutettu
+yht        | 53     | 
