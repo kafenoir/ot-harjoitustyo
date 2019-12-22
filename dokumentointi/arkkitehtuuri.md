@@ -48,9 +48,11 @@ Sovellus tallettaa omat listat seuraavassa formaatissa
 
 Kentät on eroteltu puolipistein. Ensimmäisenä sanan tunniste id, toisena hanzi-merkki, kolmantena pinyin(tooni merkitty numerolla) ja viimeisenä englanninkielinen käännös.
 
-## Päätoiminnallisuudet
+## Päätoiminnallisuudet sekvenssikaavioina
 
 ![kirjautuminen](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/kuvat/kirjautuminen.png)
 
 ![uudenkayttajanluominen](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/kuvat/kayttajanluominen.png)
+
+![mylistinluominen](https://github.com/kafenoir/ot-harjoitustyo/blob/master/dokumentointi/kuvat/mylist_luonti.png)
 
