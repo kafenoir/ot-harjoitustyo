@@ -28,7 +28,7 @@ Kaikista ikkunoista voi myös siirtyä napilla (Exit) edelliseen näkymään tai
 * käyttäjä voi luoda järjestelmään käyttäjätunnuksen :heavy_check_mark:
   * käyttäjätunnus on uniikki ja vähintään 2 merkkiä :heavy_check_mark:
 
-* käyttäjä voi kirjautua järjestelmään
+* käyttäjä voi kirjautua järjestelmään :heavy_check_mark:
   * kirjautuminen onnistuu syöttäessä olemassaoleva käyttäjätunnus kirjautumiskenttään :heavy_check_mark:
 * jos käyttäjää ei ole olemassa, ilmoittaa järjestelmä tästä :heavy_check_mark:
 
