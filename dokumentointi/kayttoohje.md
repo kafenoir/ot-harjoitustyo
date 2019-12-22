@@ -31,7 +31,7 @@ Päävalikossa on valittavissa seuraavat vaihtoehdot:
 * My Word List
 * Logout
 
-## Sanojen lisääminen ja poistaminen omasta listasta
+## Sanojen lisääminen ja poistaminen omalta listalta
 Valitsemalla "My Word List" pääsee tarkastelemaan sanakirjan (vasemmalla) ja oman listan (oikealla) sisältöä. Sanakirjasta voi siirtää sanoja omaan listaan valitsemalla siitä sana ja klikkaamalla nappia "Add>>". Sanojen poistaminen omasta listasta tapahtuu valitsemalla omasta listasta sana ja klikkaamalla nappia "Remove".
 
 ## Practice!
