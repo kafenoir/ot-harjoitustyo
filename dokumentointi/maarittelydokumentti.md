@@ -48,8 +48,7 @@ Kaikista ikkunoista voi myös siirtyä napilla (Exit) edelliseen näkymään tai
   * käyttäjä näkee kysytyn kirjoitusmerkin :heavy_check_mark:
   * käyttäjä voi syöttää merkin pinyin-siirtokirjoitusmuodon (pinyin-harjoitus) :heavy_check_mark:
   * käyttäjä voi syöttää merkin englanninkielisen käännöksen (eng. harjoitus) :heavy_check_mark:
-  * käyttäjä saa tietää, menikö vastaus oikein :heavy_check_mark:
-    *jos meni, käyttäjä saa pisteen 
+  * käyttäjä saa tietää, menikö vastaus oikein ja saa pisteen, jos vastaus oli oikein :heavy_check_mark:
 
 * Tulosnäkymä
   * harjoituksen päätyttyä käyttäjä näkee pisteensä :heavy_check_mark:
