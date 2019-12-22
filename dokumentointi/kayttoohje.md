@@ -32,7 +32,7 @@ Päävalikossa on valittavissa seuraavat vaihtoehdot:
 * Logout
 
 ## Sanojen lisääminen ja poistaminen omalta listalta
-Valitsemalla "My Word List" pääsee tarkastelemaan sanakirjan (vasemmalla) ja oman listan (oikealla) sisältöä. Sanakirjasta voi siirtää sanoja omaan listaan valitsemalla siitä sana ja klikkaamalla nappia "Add>>". Sanojen poistaminen omasta listasta tapahtuu valitsemalla omasta listasta sana ja klikkaamalla nappia "Remove".
+Valitsemalla "My Word List" pääsee tarkastelemaan sanakirjan (vasemmalla) ja oman listan (oikealla) sisältöä. Sanakirjasta voi siirtää sanoja omaan listaan valitsemalla siitä sana ja klikkaamalla nappia "Add>>". Sanojen poistaminen omalta listalta tapahtuu valitsemalla listalta sana ja klikkaamalla nappia "Remove".
 
 ## Practice!
 Valitsemalla päävalikosta "Practice!" pääse harjoitusvalikkoon, jossa voi valita pelityypin kahdesta vaihtoehdosta: Hanzi to Pinyin tai Hanzi to English. 
