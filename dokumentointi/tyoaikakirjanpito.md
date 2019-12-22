@@ -9,5 +9,5 @@
 18.12.2019 | 6      | aloitettu graafisen käyttöliittymän toteuttaminen
 20.12.2019 | 3      | graafisen käyttöliittymän säätämistä
 21.12.2019 | 9      | graafinen käyttöliittymä valmis, testien kirjoittamista
-22.12.2019 | 2	    | testien kirjoittamista
-yht        | 59     | 
+22.12.2019 | 7	    | testien kirjoittamista, viimeistelyt
+yht        | 64     | 
