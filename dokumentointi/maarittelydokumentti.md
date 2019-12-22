@@ -11,7 +11,7 @@ Sovellus koostuu kuudesta eri näkymästä.
 
 Se aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käyttäjän luomisnäkymään tai onnistuneen kirjautumisen kautta käyttäjän päävalikkoon.
 
-Päävalikosta voi siirtyä joko harjoituksen valintaan (Practice!) tai oman sanalistan muokkaukseen (My Word List). Valikosta voi myös kirjautua ulos (Logout").
+Päävalikosta voi siirtyä joko harjoituksen valintaan (Practice!) tai oman sanalistan muokkaukseen (My Word List). Valikosta voi myös kirjautua ulos (Logout).
 
 Harjoituksen valinnasta (Practice Menu) voi siirtyä pinyin-peliin (Hanzi to Pinyin) tai käännöspeliin (Hanzi to English).
 
