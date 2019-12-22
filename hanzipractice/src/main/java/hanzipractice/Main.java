@@ -1,6 +1,5 @@
 package hanzipractice;
 
-import hanzipractice.ui.TextUI;
 import hanzipractice.ui.GUI;
 
 public class Main {

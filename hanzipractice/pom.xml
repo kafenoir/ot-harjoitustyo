@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>hanzipractice</groupId>
     <artifactId>hanzipractice</artifactId>
-    <version>0.2</version>
+    <version>final</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
