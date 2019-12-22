@@ -22,7 +22,7 @@ public class MyList {
     public User getUser() {
         return user;
     }
-    
+
     public List<Word> getWords() {
         return words;
     }
@@ -30,39 +30,53 @@ public class MyList {
     /**
      * get a presentation of the user's word list as list of word ids
      *
-     * @return user's personal word list as a list of word ids
+     * @return user's word list as a list of word ids
      */
     public ArrayList<Integer> getWordIds() {
 
         ArrayList<Integer> wl = new ArrayList();
-        for (Word word : words) {
-            wl.add(word.getID());
+
+        if (!words.isEmpty()) {
+            for (Word word : words) {
+                wl.add(word.getID());
+            }
         }
 
         return wl;
 
     }
-    
+
+    /**
+     * creates an ArrayList of string representations of the Word objects in
+     * words
+     *
+     * @return words as a list of strings
+     */
     public ArrayList<String> getWordsAsStrings() {
         ArrayList<String> wordStrings = new ArrayList<>();
         for (Word word : words) {
             wordStrings.add(word.toString());
         }
-        
+
         return wordStrings;
-    }
-    
-    public void setNewHighScore(int score) {
-        
-        if (score > this.score) {
-            this.score = score;
-        }
-        
     }
 
     /**
-     * adds a word to the persona list by matching a given id to those in the
-     * dictionary
+     * set a new high score if the final score exceeds the previous high score
+     *
+     * @param score final score for the practice
+     */
+    public void setNewHighScore(int score) {
+
+        if (score > this.score) {
+            this.score = score;
+        }
+
+    }
+
+    /**
+     * adds a word to the user's list by matching a given id to those in the
+     * dictionary, resets high score
      *
      * @param id word id
      * @param dictionary the dictionary to be matched with
@@ -75,39 +89,17 @@ public class MyList {
     }
 
     /**
-     * removes a word from the personal list if it exists
+     * removes a word from the user's list if it exists, resets high score
      *
      * @param id word id
-     * @return true if the word is successfully removed, false if the word is
-     * not found
      */
-    public boolean removeWord(int id) {
+    public void removeWord(int id) {
         for (Word word : words) {
             if (word.getID() == id) {
                 words.remove(word);
                 score = 0;
-                return true;
+                break;
             }
         }
-        return false;
-    }
-    
-
-    /**
-     * builds and returns a printable string of the personal word list
-     *
-     * @return contents of the personal word list as a string
-     */
-
-    @Override
-    public String toString() {
-        StringBuilder lB = new StringBuilder();
-        for (Word word : words) {
-            lB.append(word.toString() + "\n");
-        }
-        lB.append("Your highest score for this list is " + this.score + "/" + words.size() + ".");
-        String l = lB.toString();
-        return l;
-
     }
 }

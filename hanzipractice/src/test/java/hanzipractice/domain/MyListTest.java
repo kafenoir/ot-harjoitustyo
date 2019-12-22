@@ -23,10 +23,4 @@ public class MyListTest {
         
     }
     
-    @Test
-    public void correctToStringFormat(){
-        
-        String s = String.format("[%2s %2s %15s %15s]", 1, "yi", "yi1", "one");
-        assertEquals(words.toString(), s);
-    }
 }

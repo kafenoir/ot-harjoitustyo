@@ -10,6 +10,8 @@ public class FakeUserDao implements UserDao {
 
     public FakeUserDao() {
         users.add(new User("tester", "Antti Nyymi"));
+        users.add(new User("tester1", "Teppo Testaaja"));
+        users.add(new User("tester2", "Benjamin Franklin"));
     }
     
     @Override

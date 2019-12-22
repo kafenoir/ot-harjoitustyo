@@ -24,8 +24,10 @@ public class MyListFileDao implements MyListDao {
                 String[] parts = reader.nextLine().split(";");
                 String username = parts[0];
                 ArrayList<Integer> words = new ArrayList<>();
-                for (int i = 1; i < parts.length; i++) {
-                    words.add(Integer.valueOf(parts[i]));
+                if (parts.length > 1) {
+                    for (int i = 1; i < parts.length; i++) {
+                        words.add(Integer.valueOf(parts[i]));
+                    }
                 }
                 myLists.put(username, words);
             }
@@ -43,10 +45,12 @@ public class MyListFileDao implements MyListDao {
                 String user = entry.getKey();
                 ArrayList<Integer> wordlist = entry.getValue();
                 writer.write(user + ";");
-                for (int i = 0; i < wordlist.size() - 1; i++) {
-                    writer.write(wordlist.get(i) + ";");
+                if (!wordlist.isEmpty()) {
+                    for (int i = 0; i < wordlist.size() - 1; i++) {
+                        writer.write(wordlist.get(i) + ";");
+                    }
+                    writer.write(wordlist.get(wordlist.size() - 1) + "\n");
                 }
-                writer.write(wordlist.get(wordlist.size() - 1) + ";");
             }
         }
 

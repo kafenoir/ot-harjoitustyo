@@ -26,8 +26,7 @@ public class FileWordDao implements WordDao {
                 words.add(w);
             }
         } catch (Exception e) {
-            FileWriter writer = new FileWriter(new File(file));
-            writer.close();
+
         }
     }
 

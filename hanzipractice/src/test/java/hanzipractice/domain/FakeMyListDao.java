@@ -14,9 +14,14 @@ public class FakeMyListDao implements MyListDao {
     
     public FakeMyListDao() {
         mLists = new HashMap<>();
-        ArrayList<Integer> aL = new ArrayList();
-        aL.add(1);
-        mLists.put("testertester", aL);
+        ArrayList<Integer> mockList1 = new ArrayList();
+        ArrayList<Integer> mockList2 = new ArrayList();
+        for (int i = 1; i <= 5; i++) {
+            mockList1.add(i);
+            mockList2.add(i+1);
+        }
+        mLists.put("tester1", mockList1);
+        mLists.put("tester2", mockList2);
         
     }
 

@@ -9,7 +9,6 @@ public class Practice {
 
     private List<Word> words;
     private Word active;
-    private Boolean[] answered;
     private int points;
     private int maxPoints;
 
@@ -18,24 +17,28 @@ public class Practice {
         words.addAll(mList.getWords());
         maxPoints = words.size();
         points = 0;
-        answered = new Boolean[words.size()];
-        Arrays.fill(answered, Boolean.FALSE);
     }
 
     public int getSize() {
         return words.size();
     }
-    
+
     public int getScore() {
         return this.points;
     }
 
+    /**
+     * fetches a random word as the next question, removes the word from the
+     * list so it won't be asked again
+     *
+     * @return the asked word as a Word object
+     */
     public Word askWord() {
-        
+
         if (words.isEmpty()) {
             return null;
         }
-        
+
         Random r = new Random();
 
         Word a = words.get(r.nextInt(words.size()));
@@ -45,6 +48,13 @@ public class Practice {
         return a;
 
     }
+
+    /**
+     * checks if the answer given in pinyin is correct
+     *
+     * @param answer user inputted answer
+     * @return true if correct, otherwise false
+     */
 
     public Boolean isCorrectPinyin(String answer) {
 
@@ -56,6 +66,12 @@ public class Practice {
         return false;
     }
 
+    /**
+     * checks if the answer given in English is correct
+     *
+     * @param answer user inputted answer
+     * @return true if correct, otherwise false
+     */
     public Boolean isCorrectEng(String answer) {
         if (answer.equals(active.getEngTrans())) {
             points++;
@@ -65,7 +81,11 @@ public class Practice {
 
     }
 
-
+    /**
+     * returns the score as scored points out of max points
+     *
+     * @return points/maxpoints
+     */
     public String getScoreAsString() {
         String results = points + "/" + maxPoints;
         return results;

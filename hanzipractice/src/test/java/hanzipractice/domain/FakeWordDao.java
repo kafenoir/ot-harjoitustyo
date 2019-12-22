@@ -11,7 +11,13 @@ public class FakeWordDao implements WordDao{
     List<Word> words = new ArrayList<>();
     
     public FakeWordDao() {
-        words.add(new Word(1, "yi", "yi1", "yksi"));
+        
+        words.add(new Word(1,"yi","yi1","one"));
+        words.add(new Word(2,"er","er2","two"));
+        words.add(new Word(3,"san","san3","three"));
+        words.add(new Word(4,"si","si4","four"));
+        words.add(new Word(5,"wu","wu3","five"));
+        words.add(new Word(6,"liu","liu4","six"));
     }
 
     @Override

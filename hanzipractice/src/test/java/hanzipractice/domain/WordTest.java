@@ -10,7 +10,7 @@ public class WordTest {
     @Test
     public void correctToStringFormat(){
         Word w = new Word(1, "yi", "yi1", "one");
-        String s = String.format("%2s %2s %15s %15s", 1, "yi", "yi1", "one");
+        String s = String.format("%s %2s %15s %15s", 1, "yi", "yi1", "one");
         assertEquals(w.toString(), s);
     }
     

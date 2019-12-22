@@ -117,6 +117,7 @@ public class GUI extends Application {
 
         newUserButton.setOnAction(e -> {
             usernameInput.setText("");
+            loginMessage.setText("");
             primaryStage.setScene(newUserScene);
         });
 
@@ -128,7 +129,7 @@ public class GUI extends Application {
         loginOptions.getChildren().addAll(newUserButton, exitButton, loginMessage);
         loginPane.getChildren().addAll(titleLabel, loginInput, loginOptions);
 
-        Scene loginScene = new Scene(loginPane, 300, 210);
+        Scene loginScene = new Scene(loginPane, 300, 300);
 
         // newUserScene
         VBox newUserPane = new VBox(10);
@@ -159,6 +160,21 @@ public class GUI extends Application {
         Button createNewUserButton = new Button("Create");
         createNewUserButton.setPadding(new Insets(10));
         createNewUserButton.setPrefWidth(240);
+        createNewUserButton.setOnAction(e -> {
+            if (newUsernameInput.getText().length() >= 2 && newNameInput.getText().length() >= 2) {
+                if(hpService.createUser(newUsernameInput.getText(), newNameInput.getText())) {
+                    newUsernameInput.setText("");
+                    newNameInput.setText("");
+                    loginMessage.setText("New User Created!");
+                    primaryStage.setScene(loginScene);
+                } else {
+                    userCreationMessage.setText("Username already taken!");
+                }
+            } else {
+                userCreationMessage.setText("Username or name too short!");
+            }
+            
+        });
 
         newUserPane.getChildren().addAll(newUserTitle, newUsernamePane, newNamePane, createNewUserButton, userCreationMessage);
         newUserScene = new Scene(newUserPane, 300, 210);

@@ -48,7 +48,6 @@ public class HPService {
         } catch (Exception e) {
             return false;
         }
-
         return true;
     }
 
@@ -57,7 +56,7 @@ public class HPService {
      *
      * @param username
      *
-     * @return true, if username exists, otherwise false
+     * @return true if username exists, otherwise false
      */
     public boolean login(String username) {
         User user = userDao.findByUsername(username);
@@ -89,65 +88,74 @@ public class HPService {
     /**
      * creates a dictionary from the dictionary file
      */
-    public void readDictionary() {
-        this.dictionary = new Dictionary(wordDao.getAll());
+    public Dictionary readDictionary() {
+        dictionary = new Dictionary(wordDao.getAll());
+        return dictionary;
     }
 
     /**
-     * prints the dictionary
+     * returns the contents of the dictionary as strings
+     *
+     * these are used for creating the ListView in GUI
+     *
+     * @return
      */
-    public void printDictionary() {
-        System.out.println(dictionary);
-    }
-
     public ArrayList<String> dictionaryAsStrings() {
         return dictionary.getDictionaryAsStrings();
     }
 
     /**
-     * prints the user's personal word list
+     * returns the contents of the current user's word list as strings
+     *
+     * these are used for creating the ListView in GUI
+     *
+     * @return
      */
-    public String printMyList() {
-
-        return myList.toString();
-    }
-
     public ArrayList<String> myListAsStrings() {
         return myList.getWordsAsStrings();
     }
 
     /**
-     * creates a personal word list for the logged user by matching IDs of the
-     * words in the dictionary with those saved as a sequence in MyList file
+     * Extracts all saved word lists from the mylist file
      *
      */
-    public void readMyLists() {
+    public HashMap<String, ArrayList<Integer>> readMyLists() {
 
         try {
             myLists = myListDao.getAll();
+            
 
         } catch (Exception ex) {
 
         }
-
-    }
-
-    public void createMyList() {
-
-        ArrayList<Word> wl = new ArrayList<>();
-        for (Integer i : myLists.get(loggedIn.getUsername())) {
-            Word w = dictionary.searchByWordID(i);
-            wl.add(w);
-
-        }
-        myList = new MyList(loggedIn, wl);
+        return myLists;
     }
 
     /**
-     * adds a word to the user's personal word list by matching the given ID
-     * with word ID's in the dictionary
+     * creates a Word object list for the current user based on the username and
+     * word IDs extracted from the mylist file
+     */
+    public MyList createMyList() {
+
+        ArrayList<Word> wl = new ArrayList<>();
+
+        if (myLists.containsKey(loggedIn.getUsername())) {
+            for (Integer i : myLists.get(loggedIn.getUsername())) {
+                Word w = dictionary.searchByWordID(i);
+                wl.add(w);
+
+            }
+        }
+        myList = new MyList(loggedIn, wl);
+        return myList;
+    }
+
+    /**
+     * Extracts the word id from dictionary ListView string and adds the
+     * corresponding word to myList
      *
-     * @param id user inputted word ID
+     * @param wordAsString String representation of a word from dictionary
+     * ListView
      */
     public void addWordToMyList(String wordAsString) {
         String[] wordTable = wordAsString.split(" ");
@@ -156,26 +164,20 @@ public class HPService {
     }
 
     /**
-     * removes a word with matching ID from the user's personal word list or
-     * returns and error message if a matching word is not on the list
+     * Extracts the word id from my list ListView string and removes the
+     * corresponding word from myList
      *
-     * @param id user inputted word ID
-     *
-     * @return String "Word removed! if word is on the list, String "Invalid
-     * Command!" if word is not on the list
+     * @param wordAsString String representation of a word from my list ListView
      */
     public void removeWordFromMyList(String wordAsString) {
 
         String[] wordTable = wordAsString.split(" ");
-        if (myList.removeWord(Integer.valueOf(wordTable[0]))) {
-            editMyLists();
-
-        }
-
+        myList.removeWord(Integer.valueOf(wordTable[0]));
+        editMyLists();
     }
 
     /**
-     * saves changes to the personal list into the file
+     * saves changes to the word list into mylist file
      */
     public void editMyLists() {
         myLists.put(loggedIn.getUsername(), myList.getWordIds());
@@ -187,24 +189,38 @@ public class HPService {
         }
     }
 
+    /**
+     * creates a new practice
+     */
     public void createPractice() {
 
         this.practice = new Practice(myList);
-
     }
 
+    /**
+     * generates the next question
+     *
+     * @return returns the next question if questions left, otherwise returns
+     * "GAME OVER"
+     */
     public String askQuestion() {
 
         Word q = practice.askWord();
         if (q == null) {
             return "GAME OVER";
         }
-        
+
         String question = q.getHanzi();
         return question;
-
     }
 
+    /**
+     * checks if the user's answer to the question is correct
+     *
+     * @param answer user inputted answer
+     * @param type game mode
+     * @return true if the answer is correct, otherwise false
+     */
     public Boolean isCorrect(String answer, int type) {
         if (type == 1) {
             if (practice.isCorrectPinyin(answer)) {
@@ -219,6 +235,11 @@ public class HPService {
         return false;
     }
 
+    /**
+     * checks if the current game is over
+     *
+     * @return true if the game is over, otherwise false
+     */
     public Boolean isOver() {
         if (practice.getSize() == 0) {
             return true;
@@ -226,6 +247,12 @@ public class HPService {
         return false;
     }
 
+    /**
+     * end of game operations: shows user's practice score, sets a new high
+     * score for the current list, if achieved
+     *
+     * @return user's score for the completed practice
+     */
     public String gameOver() {
         myList.setNewHighScore(practice.getScore());
         return practice.getScoreAsString();

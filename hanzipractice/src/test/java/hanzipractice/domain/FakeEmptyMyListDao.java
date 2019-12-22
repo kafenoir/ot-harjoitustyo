@@ -1,4 +1,3 @@
-
 package hanzipractice.domain;
 
 import org.junit.Test;
@@ -9,11 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class FakeEmptyMyListDao implements MyListDao {
-    HashMap<String, ArrayList<Integer>> mLists; 
-    
-    
+
+    HashMap<String, ArrayList<Integer>> mLists;
+
     public FakeEmptyMyListDao() {
-        mLists = new HashMap<>();  
+
+        mLists = new HashMap<>();
+
     }
 
     @Override
@@ -22,8 +23,8 @@ public class FakeEmptyMyListDao implements MyListDao {
     }
 
     @Override
-    public boolean edit(HashMap<String, ArrayList<Integer>> myLists){
+    public boolean edit(HashMap<String, ArrayList<Integer>> myLists) {
         return true;
     }
-    
+
 }
