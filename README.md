@@ -56,6 +56,10 @@ JAR luodaan komennolla
 
 [Release](https://github.com/kafenoir/ot-harjoitustyo/releases/tag/viikko6)
 
+## Loppupalautus
+
+[Release](https://github.com/kafenoir/ot-harjoitustyo/releases/tag/final)
+
 
 
 
