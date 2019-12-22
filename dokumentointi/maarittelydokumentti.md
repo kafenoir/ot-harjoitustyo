@@ -7,7 +7,7 @@ Sovelluksella on ainoastaan yksi käyttäjärooli eli normaali käyttäjä.
 
 ## Käyttöliittymäluonnos
 
-Sovellus koostuu kymmenestä eri näkymästä.
+Sovellus koostuu kuudesta eri näkymästä.
 
 Se aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käyttäjän luomisnäkymään tai onnistuneen kirjautumisen kautta käyttäjän päävalikkoon.
 
