@@ -62,19 +62,6 @@ public class MyList {
     }
 
     /**
-     * set a new high score if the final score exceeds the previous high score
-     *
-     * @param score final score for the practice
-     */
-    public void setNewHighScore(int score) {
-
-        if (score > this.score) {
-            this.score = score;
-        }
-
-    }
-
-    /**
      * adds a word to the user's list by matching a given id to those in the
      * dictionary, resets high score
      *

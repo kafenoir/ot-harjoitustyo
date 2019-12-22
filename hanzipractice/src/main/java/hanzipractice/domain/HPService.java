@@ -123,7 +123,6 @@ public class HPService {
 
         try {
             myLists = myListDao.getAll();
-            
 
         } catch (Exception ex) {
 
@@ -254,7 +253,7 @@ public class HPService {
      * @return user's score for the completed practice
      */
     public String gameOver() {
-        myList.setNewHighScore(practice.getScore());
+
         return practice.getScoreAsString();
     }
 }

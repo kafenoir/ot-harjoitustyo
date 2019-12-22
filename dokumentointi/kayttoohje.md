@@ -64,7 +64,7 @@ Esimerkki:
 >Odotettu vastaus: cat
 
 ### Pelin kulku
-Peli kysyy sattumanvaraisessa järjestyksessä kaikki omalle listalle lisätyt merkit. Jokaisen vastauksen jälkeen näytetään, menikö vastaus oikein sekä oikea vastaus. Kun kaikki merkit on kysytty, ohjelma näyttää harjoituksesta saadut pisteet.
+Peli kysyy sattumanvaraisessa järjestyksessä kaikki omalle listalle lisätyt merkit. Jokaisen vastauksen jälkeen näytetään, menikö vastaus oikein. Kun kaikki merkit on kysytty, ohjelma näyttää harjoituksesta saadut pisteet.
 
 ## Uloskirjautuminen
 Ohjelmasta voi kirjautua ulos valitsemalla päävalikosta "Logout". Ohjelma kirjaa käyttäjän ulos ja siirtyy takaisin aloitusnäkymään.
