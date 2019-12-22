@@ -16,10 +16,6 @@ Sovellus on Helsingin Yliopiston Tietojenkäsittelytieteen kurssin Ohjelmistotek
 
 ## Komentorivitoiminnot
 
-Ohjelma käynnistetään komennolla
-
->mvn compile exec:java -Dexec.mainClass=hanzipractice.Main
-
 ### Testaus
 
 Testit suoritetaan komennolla
