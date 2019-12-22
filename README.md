@@ -16,6 +16,10 @@ Sovellus on Helsingin Yliopiston Tietojenkäsittelytieteen kurssin Ohjelmistotek
 
 ## Komentorivitoiminnot
 
+Ohjelma käynnistetään komennolla
+
+>mvn compile exec:java -Dexec.mainClass=hanzipractice.Main
+
 ### Testaus
 
 Testit suoritetaan komennolla
@@ -35,6 +39,12 @@ Tiedoston [checkstyle.xml](https://github.com/kafenoir/ot-harjoitustyo/blob/mast
 >mvn jxr:jxr checkstyle:checkstyle
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
+
+### Javadoc
+
+Javadocin HTML-versio luodaan komennolla
+
+>mvn javadoc:javadoc
 
 ### Suoritettavan JARin generointi
 
