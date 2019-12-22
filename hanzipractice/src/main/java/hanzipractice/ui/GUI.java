@@ -42,7 +42,6 @@ public class GUI extends Application {
     private Scene newUserScene;
     private Scene loginScene;
     private Scene myListScene;
-    private Scene dictionaryScene;
     private Scene practiceMenuScene;
     private Scene practiceScene;
     private Scene gameOverScene;
@@ -194,11 +193,11 @@ public class GUI extends Application {
 
         Button practiceButton = new Button("Practice!");
         Button myListButton = new Button("My List");
-        Button dictionaryButton = new Button("Dictionary");
+
         Button logoutButton = new Button("Logout");
         practiceButton.setPrefSize(240, 50);
         myListButton.setPrefSize(240, 50);
-        dictionaryButton.setPrefSize(240, 50);
+
         logoutButton.setPrefSize(240, 50);
 
         practiceButton.setOnAction(e -> {
@@ -214,7 +213,7 @@ public class GUI extends Application {
             primaryStage.setScene(loginScene);
         });
 
-        mainMenuPane.getChildren().addAll(currentUser, mainMenuTitleLabel, practiceButton, myListButton, dictionaryButton, logoutButton);
+        mainMenuPane.getChildren().addAll(currentUser, mainMenuTitleLabel, practiceButton, myListButton, logoutButton);
         mainMenuScene = new Scene(mainMenuPane, 300, 400);
 
         //practice menu scene
